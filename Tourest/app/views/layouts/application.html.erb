@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tourest</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="/assets/bootstrap.css">
+  <link rel="stylesheet" href="/assets/bootstrap-theme.css">
+  <link rel="stylesheet" href="/assets/mystyle.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render 'layouts/header' %>
+	
+	<div class="container">
+		<%= yield %>
+	</div>
 
-<%= yield %>
+	<%= render 'layouts/footer' %>
 
+<script src="/assets/bootstrap.js"></script>
 </body>
 </html>
