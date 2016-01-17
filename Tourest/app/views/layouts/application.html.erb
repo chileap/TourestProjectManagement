@@ -2,11 +2,13 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'layouts', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="/assets/bootstrap.css">
   <link rel="stylesheet" href="/assets/bootstrap-theme.css">
   <link rel="stylesheet" href="/assets/mystyle.css">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'layouts', 'data-turbolinks-track' => true %>
+  <script src="/assets/jquery-2.1.4.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
