@@ -1,0 +1,55 @@
+  <% provide(:title, "Register") %>
+
+  <div id="wrapper" style="margin-top:100px;">
+    <div class="container">
+      <div class="col-md-10 col-sm-10 col-xs-12 container">
+        <div class="container">
+          <h2>Welcome to Register</h2>
+          <%= form_for(resource, html: { class: 'form-horizontal' }, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="field form-group" style="margin-top:30px;">
+              <%= f.label :name , class: "control-label col-sm-offset-1 col-sm-2"%>
+              <div class="col-sm-6">
+                <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Enter UserName" %>
+              </div>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :email , class: "control-label col-sm-offset-1 col-sm-2"%>
+              <div class="col-sm-6">
+                <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter Email" %>
+              </div>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :password , class: "control-label col-sm-offset-1 col-sm-2"%>
+              <div class="col-sm-6">
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter Password" %>
+              </div>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :password_confirmation , class: "control-label col-sm-offset-1 col-sm-2"%>
+              <div class="col-sm-6">
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Enter Confirm Password" %>
+              </div>
+            </div>
+            
+            <div class="col-sm-offset-3 col-sm-6" style="margin-top:30px;"> 
+            <div class="actions">
+              <%= f.submit "Sign up" , class: "my-btn"%>
+            </div>
+  
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+            
+  </div>
+
+        

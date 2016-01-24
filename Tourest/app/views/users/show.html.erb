@@ -1,0 +1,7 @@
+<% provide(:title, "Profile Page") %>
+
+<div id="wrapper" style="margin-top:100px;">
+	<h2><%= @user.name %></h2>
+
+	<%= link_to "Setting", edit_user_registration_path(current_user), :class => 'btn btn-primary' %>
+</div>
