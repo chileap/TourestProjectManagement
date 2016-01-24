@@ -1,0 +1,111 @@
+<% provide(:title, "Contact") %>
+	<style>
+		.img{
+			margin-top: 60px;
+		} 
+		.sidebar{
+			float: right;	
+			width: 500px;
+			height: 630px;
+			margin: 0;
+		}
+		#map {
+			width: 500px;
+			height: 375px;
+		}
+	</style>
+	<div id="content" class="site-content col-sm-12 col-xs-12">
+		<div id="primary " class="content-area col-md-6 col-sm-6 col-xs-12">
+			<main id="main" class="site-main" role="main">
+				<article id="post-7" class="post-7 page type-page status-publish hentry">
+					<header class="entry-header">
+						<div class="entry-header-inner">
+							<h1 class="entry-title img" >Contact​ Us</h1>
+						</div>
+					</header>
+
+					<div class="entry-content-footer" id="block-login">
+						<div class="entry-content">
+							<div id="cscf" class="cscfBlock">
+								<div class="cscfMessageSent" style="display:none;">
+									<h3>Message Sent</h3>
+									<p>Thank you for your message, we will be in touch very shortly. </p>
+								</div>
+								<div class="cscfMessageNotSent" style="display:none;">
+									<p>Sorry, there has been a problem and your message was not sent.</p>
+								</div>
+
+								<div class="cscfForm">
+									<p>Please enter your contact details and a short message below and I will try to answer your query as soon as possible.</p>
+									<%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+										<%= f.input :name, :required => true %>
+										<%= f.input :email, :required => true %>
+										<%= f.input :message, :as => :text, :required => true %>
+										<div class= "hidden">
+										    <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+										</div>
+										<div>
+										    </br>
+										    <%= f.button :submit, 'Send message', :class =>"btn btn-default" %>
+										</div>
+								    <% end %>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</main>
+		</div>
+		<div id="primary" class="content-area col-md-6 col-sm-8 col-xs-12 sidebar">
+			<main id="main" class="site-main" role="main">
+				<article id="post-7" class="post-7 page type-page status-publish hentry">
+					<header class="entry-header">
+						<div class="entry-header-inner">
+							<h1 class="entry-title img" >Address:</h1>	
+						</div>
+					</header>
+					<div class="entry-content-footer">
+						<div class="entry-content">
+							<div id="cscf" class="cscfBlock">
+
+								<div class="cscfMessageNotSent" style="display:none;">
+									<p>Sorry, there has been a problem and your message was not sent.</p>
+								</div>
+								<div class="cscfForm">	
+									<p><h4>Institute of Technology of Cambodia</h4></p>	
+									<p><h5>Confederation de la Russie Blvd (110), 12156 Phnom Penh</h5></p>
+									<p><h5>Tel..................................023 882 404</h5></p>
+									<p><h5>Tel...................................023 880 370</h5></p>
+									<p><h5>Fax...................................023 880 369</h5></p>
+									<p><h5>E-Mail...............................info@itc.edu.kh </h5></p>
+									<p><h5>Website........................... www.itc.edu.kh  </h5></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+			</main>
+
+			<h1>Google Maps</h1>
+			<div id="map-container">
+				<div id="map-canvas"></div>
+				<div id="map" style="padding:20px;"></div>
+
+				<script src="https://maps.googleapis.com/maps/api/js"></script>
+				<script>
+					function initialize() {
+						var mapCanvas = document.getElementById('map');
+						var mapOptions = {
+							center: new google.maps.LatLng(44.5403, -78.5463),
+							zoom: 8,
+							mapTypeId: google.maps.MapTypeId.ROADMAP
+						}
+						var map = new google.maps.Map(mapCanvas, mapOptions)
+					}
+					google.maps.event.addDomListener(window, 'load', initialize);
+				</script>
+			</div>
+		</div>
+	</div>

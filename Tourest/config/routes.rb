@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
+
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' , registrations: 'registrations' }
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   root 'tourest#index'
