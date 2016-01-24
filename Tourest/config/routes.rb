@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'index' =>  'tourest#index'
   get 'about' =>  'tourest#about'
   get 'contact' =>  'tourest#contact'
+  get 'login' =>  'tourest#login'
+  get 'register' =>  'tourest#register'
 
   resources "tourest"
   
