@@ -1,29 +1,32 @@
 <% provide(:title, "Log in") %>
-  <div class="col-sm-offset-3 col-sm-6 col-xs-12" id="block-login"style="margin-top:100px;">
+
+<div class="col-sm-offset-1 col-xs-10"​ id="br">
+  <div class="col-sm-offset-2 col-sm-8 col-xs-12" style="margin-top:30px;" id="blocklogin" >
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="title-log">Log in</div>
-          <div class="form-group">
-            <%= f.label :email , style: "color:#fff;"%>
+         
+        <div class="title-log" style="margin-top: 20px;">Log in</div>
+          <div class="form-group" style="margin-bottom: 30px; margin-top: 50px;">
+            <%= f.label :email , style: "color:#fff; margin-bottom: 10px;"%>
             <%= f.email_field :email, autofocus: true , class: "form-control", placeholder: "Email"%>
           </div>
 
-          <div class="form-group">
-            <%= f.label :password , style: "color:#fff;" %>
+          <div class="form-group" style="margin-bottom: 30px;">
+            <%= f.label :password , style: "color:#fff; margin-bottom: 30px;" %>
             <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
           </div>
 
           <% if devise_mapping.rememberable? -%>
-            <div class="field checkbox form-group">
+            <div class="field checkbox form-group" style="margin-bottom: 30px;">
               <%= f.check_box :remember_me , style: "color:#fff;margin-left:5px;" %>
               <%= f.label :remember_me , style: "color:#fff;"%>
             </div>
           <% end -%>
 
-          <div class="actions">
+          <div class="actions" style="margin-bottom: 30px;">
             <%= f.submit "Log in" , class: "my-btn" %>
           </div>
   <% end %>
   <%= render "devise/shared/links" %>
 </div>
-
+</div>
 

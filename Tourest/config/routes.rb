@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :galleries
   match '/contacts',     to: 'contacts#new',             via: 'get'
   resources "contacts", only: [:new, :create]
 
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'       
     put "users/:id" => "users#update"     
   end
-
+  get 'new' => 'galleries#new'
   get 'index' =>  'tourest#index'
   get 'about' =>  'tourest#about'
   get 'contact' =>  'tourest#contact'
